@@ -1,13 +1,14 @@
 # Fingerprint API
 
-The Fingerprint API is a Flask-based web application that provides fingerprinting capabilities to extract OS and browser information from user agents. It allows you to gather information about clients accessing the API and store their fingerprint data in a SQLite database.
+The Fingerprint API is a basic Flask-based web application that provides fingerprinting capabilities to extract OS and browser information from user agents. It allows you to gather information about clients accessing the API and store their fingerprint data in a SQLite database.
 
 ## Features
 
 - Extracts OS and browser information from user agents.
 - Stores fingerprint data in a SQLite database.
 - Provides an API endpoint for recording fingerprints.
-
+- The application uses the [Murmur3](https://github.com/hajimes/mmh3) mmh3.hash64() hashing algorithm to fingerprint the User-Agent.
+- 
 ## Installation
 
 1. Clone the repository:
