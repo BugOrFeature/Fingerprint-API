@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "fingerprint-api"
+version = "0.1.0"
+description = "A Flask API that generates a fingerprint of the client sending a POST request."
+authors = ["Marc Visser <marcvisser@outlook.com>"]
+license = "MIT License"
+readme = "README.md"
+packages = [{include = "fingerprint_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^2.3.2"
+SQLAlchemy = "^2.0.19"
+user-agents = "^2.2.0"
+python-dotenv = "^1.0.0"
+flask-sqlalchemy = "^3.0.5"
+flask-cors = "^4.0.0"
+mmh3 = "^4.0.1"
+cryptography = "^41.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

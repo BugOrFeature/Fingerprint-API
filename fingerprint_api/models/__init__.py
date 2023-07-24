@@ -1,0 +1,1 @@
+from fingerprint_api.models.models import Fingerprint
