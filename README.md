@@ -8,7 +8,7 @@ The Fingerprint API is a basic Flask-based web application that provides fingerp
 - Stores fingerprint data in a SQLite database.
 - Provides an API endpoint for recording fingerprints.
 - The application uses the [Murmur3](https://github.com/hajimes/mmh3) mmh3.hash64() hashing algorithm to fingerprint the User-Agent.
-- 
+
 ## Installation
 
 1. Clone the repository:
