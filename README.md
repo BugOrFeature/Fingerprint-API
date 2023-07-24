@@ -18,11 +18,9 @@ git clone https://github.com/your_username/fingerprint-api.git
 cd fingerprint-api
 ```
 
-2. Create a virtual environment and activate it:
-
+2. Download poetry:
 ```bash
-python3 -m venv venv
-source venv/bin/activate   # For Windows, use `venv\Scripts\activate`
+curl -sSL https://install.python-poetry.org | python -
 ```
 
 3. Install the required dependencies using Poetry:
