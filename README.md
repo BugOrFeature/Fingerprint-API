@@ -43,16 +43,23 @@ poetry run python3 app.py
 
 ## Usage
 
-Once the development server is running, you can access the API at `http://127.0.0.1:5000`.
+Once the development server is running, you can access the API at `https://127.0.0.1:5000`.
 
 ### Record Fingerprint
 
 To record a fingerprint, send a GET or POST request to the `/api/fingerprint` endpoint with the user agent data in the request headers. The API will extract the OS and browser information and save the fingerprint to the database.
 
 Example using cURL:
-
+We use the -k parameter because we are using a self-signed certificate. This option explicitly allows curl to perform “insecure” SSL connections and transfers.
 ```bash
-curl -X POST http://127.0.0.1:5000/fingerprint -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+curl -k -X POST https://127.0.0.1:5000/api/fingerprint -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3" 
+```
+
+Response:
+```json
+{
+  "message": "Fingerprint recorded successfully."
+}
 ```
 
 ## License
