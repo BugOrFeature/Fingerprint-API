@@ -7,7 +7,7 @@ The Fingerprint API is a basic Flask-based web application that provides fingerp
 - Extracts OS and browser information from user agents.
 - Stores fingerprint data in a SQLite database.
 - Provides an API endpoint for recording fingerprints.
-- The application uses the [Murmur3](https://github.com/hajimes/mmh3) mmh3.hash64() hashing algorithm to fingerprint the User-Agent.
+- The application uses the [Murmur3](https://github.com/hajimes/mmh3) mmh3.hash128() hashing algorithm to fingerprint the User-Agent.
 
 ## Installation
 
@@ -58,15 +58,28 @@ curl -k -X POST https://127.0.0.1:5000/api/fingerprint -H "User-Agent: Mozilla/5
 Response:
 ```json
 {
-  "message": "Fingerprint recorded successfully."
+  "message": "Fingerprint recorded successfully.",
+  "result": {
+    "browser": "Chrome",
+    "browser_version": "58.0.3029",
+    "device": "Other",
+    "device_brand": "None",
+    "device_model": "None",
+    "id": 1,
+    "murmur_hash": "n89jiMmRHC5kFDGQdcN15w",
+    "os": "Windows",
+    "remote_addr": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+  }
 }
 ```
 
 Database:
 Table - fingerprint
-|                                                     user_agent                                                     | browser |    os   |                 murmur_hash                 |
-|:------------------------------------------------------------------------------------------------------------------:|:-------:|:-------:|:-------------------------------------------:|
-| Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3 | Chrome  | Windows | (-6931211862351471570, 7211443399847802343) |
+| id |                                                     user_agent                                                     | browser | browser_version | device | device_brand | device_model | os      | murmur_hash            | remote_addr |
+|:--:|:------------------------------------------------------------------------------------------------------------------:|:-------:|:---------------:|--------|--------------|--------------|---------|------------------------|-------------|
+| 1  | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3 | Chrome  | 58.0.3029       | Other  | None         | None         | Windows | n89jiMmRHC5kFDGQdcN15w | 127.0.0.1   |
+
 
 
 ## License
