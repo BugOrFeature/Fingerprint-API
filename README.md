@@ -80,7 +80,20 @@ Table - fingerprint
 |:--:|:------------------------------------------------------------------------------------------------------------------:|:-------:|:---------------:|--------|--------------|--------------|---------|------------------------|-------------|
 | 1  | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3 | Chrome  | 58.0.3029       | Other  | None         | None         | Windows | n89jiMmRHC5kFDGQdcN15w | 127.0.0.1   |
 
-
+## Additional browser information to fingerprint (todos)
+* language
+* color-depth
+* hardware-concurrency
+* screen-resolution
+* time-zone
+* storage-info
+* cpuClass
+* platform
+* plugins
+* canvas
+* webGL
+* touchSupport
+* fonts
 
 ## License
 
